@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music</title>
+</head>
+<style>
+        body{
+            margin: 0; padding: 0;
+        box-sizing:border box
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .container{
+                background-color: teal;
+        }
+        .container.heading{
+            font-size: 3rem;
+            padding: 2rem 0;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-shadow: 0 .5rem 1rem rgb(57, 14, 164);
+            color:aliceblue
+        }
+        .container .Music-Container{
+            display:flex;
+            align-items: center;
+            flex-flow: column;
+        }
+        .container .Music-Container .box{
+            height: 16rem;
+            width: 80%;
+            display:flex;
+            align-items: center;
+            background-color: blueviolet;
+            border-radius: 1rem;
+            box-shadow: 0 .5rem 1rem rgb(57, 14, 164);
+            overflow: hidden;
+            margin: 2rem;
+        }
+        .container.Music-Container.image{
+            height: 100%;
+            width: 25%;
+        }
+        .container.Music-Container.image img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .container.Music-Container.box .music{
+            width: 75%;
+        }
+        .container.Music-Container.box .music audio{
+            width: 100%;
+            outline: none;
+        }
+        .container.Music-Container.box .music audio::-webkit-media-controls-enclosure{
+            background-color: none ;
+        }
+
+        @media (max-width: 600px) {
+            .container .Music-Container .box{
+                 height: 27rem;
+                 width: 90rem;
+                 flex-flow: column;
+            }
+            .container.Music-Container.image{
+                height: 80%;
+                width: 100%;
+            }
+            .container.Music-Container.music{
+                height: 20%;
+                width: 100%;
+            }
+        }
+</style>
+
+<body>
+   <div class = "container">
+    <div class = "heading"> Music Gallery  </div>  
+    <div class = "Music-Container"> 
+        <div class="box">
+            <div class =" image">
+                <img src="pic7.jpg" alt="">
+            </div>
+            <div class="music">
+                <audio src="Taylor Swift - cardigan (Official Lyric Video).mp3">controls</audio>
+            </div>
+        </div>
+    </div>  
+   </div>
+</body>
+</html>

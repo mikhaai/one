@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <title>Taylor's Version</title> <br>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Crimson+Text&family=Dancing+Script&family=Manrope&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Manrope&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+        
+	<style>
+        @font-face {
+            font-family: 'AllotropeWide';
+            src: url('Demo_Fonts/Fontspring-DEMO-allotropewide-bold.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+		body {
+			margin: 0;
+			padding: 0;
+			display:flex;
+			flex-direction:column;
+			min-height: -1vh;               
+		}
+		
+		main{
+            display :flex;
+        }
+
+		h1
+        {
+            margin: 0;            
+		}
+
+        p 
+        {
+            color: rgb(35, 12, 99);
+        }
+        footer{
+            Font-family: 'Crimson Text', serif;
+        }
+        .right
+        {
+            font-family:'Manrope', sans-serif ;
+            width : 50%;
+            display :flex;
+            flex-direction: column;
+            text-align: center;
+            margin-left: 55%;
+        }
+
+        .left
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 15px;
+        }
+
+        .lyrics
+        {
+            text-align: center;
+            display: flex;
+            row-gap: 10px;
+        }
+        .title
+        {
+            display: flex;
+            color :rgb(39, 11, 105); 
+            justify-content: center;
+            font-size:x-large;
+            padding-top: 0%;
+        }
+        
+        .slide-container {
+            width: 100%;
+            height:100%;
+            display: flex;
+        }
+
+        .center-top 
+        {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+        }
+
+        .slides{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 400px;
+            font-size: xx-small;
+        }
+
+        .image-slider{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            
+        }
+        
+        .slides-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+
+        .img{
+            position: relative;
+            width: 140px;
+            object-fit: cover;
+            height: 200px;
+            transition: 0.5s;
+        }
+
+        .button {
+            position: absolute;
+            width: 140px;
+            height: 200px;
+            transition: 0.5s;
+            background-color: rgba(67, 67, 151, 0.2);
+        }
+
+        #slider-span1:target ~ .image-slider #img1,
+        #slider-span1:target ~.image-slider #button-1{
+            width:280px;
+            height: 385px;
+            background-color: transparent;
+        } 
+        #slider-span2:target ~ .image-slider #img2,
+        #slider-span2:target ~.image-slider #button-2{
+            width:280px;
+            height: 385px;
+            background-color: transparent;
+        }
+        #slider-span3:target ~ .image-slider #img3,
+        #slider-span3:target ~.image-slider #button-3{
+            width:280px;
+            height: 385px;
+            background-color: transparent;
+        }
+
+        #slider-span1:target ~.image-slider{
+            left:20%;
+        }
+        #slider-span2:target ~.image-slider{
+            left:0%;
+        }
+        #slider-span3:target ~.image-slider{
+            left:-20%;
+        }
+        audio
+        { 
+            margin:auto;
+            padding: 5px;
+        }
+        audio::-webkit-media-controls-play-button{
+            background-color:  #918f8c;
+            border-radius: 50%;
+        }
+        audio::-webkit-media-controls-timeline{
+            background-color:  #c2ac8c;
+            border-radius: 40px;
+        }
+        audio::-webkit-media-controls-volume-slider{
+            background-color:  #b7b5b2;
+            border-radius: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+        }
+	</style>
+</head>
+        <body style="display: flex; justify-content: center;"> 
+            <div class = "left">
+                <a  href="https://www.taylorswift.com/" >Daniel Caesar</a>
+                <h1 style="font-family: 'Courgette', sans-serif; font-size: 40PX;">
+                   Never Enough
+                </h1>
+                <div class="slides">
+                    <div class="slide-container">
+                        <span class="slider-span" id="slider-span1"></span>
+                        <span class="slider-span" id="slider-span2"></span>
+                        <span class="slider-span" id="slider-span3"></span>
+                        <div class="image-slider">
+                            <div class="slides-div" id="slide-1">
+                                <img src="https://th.bing.com/th/id/OIP.C01toQXep1WGFzL4j5j1UQHaHa?w=184&h=184&c=7&r=0&o=5&pid=1.7" alt="" class="img" id="img1">
+                                <a href="#slider-span1" class="button" id="button-1"></a>
+                            </div>
+                            <div class="slides-div" id="slide-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Daniel_Caesar_-_Never_Enough.png/220px-Daniel_Caesar_-_Never_Enough.png">
+                                <a href="#slider-span2" class="button" id="button-2"></a>
+                            </div>
+                            <div class="slides-div" id="slide-3">
+                                <img src="https://th.bing.com/th/id/OIP.wxL77ZA1pfulS3PAsFBibQHaHa?w=184&h=184&c=7&r=0&o=5&pid=1.7" alt="" class="img" id="img3">
+                                <a href="#slider-span3" class="button" id="button-3"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-family: 'Poppins', sans-serif;">
+                    <i><b>Never Enough</b></i> is the third studio album by Canadian singer-songwriter Daniel Caesar. It was released through Republic on April 7, 2023, two days after his 28th birthday.<br>
+
+                    <p style="font-family: 'Poppins', sans-serif; ">
+                        Produced by <b> Ace G, BadBadNotGood, Matthew Burnett, Daniel Caesar, Cyeux Jordan Evans, Chris Jennings, Rami, Mark Ronson, Sacha Rudy, Raphael Saadiq, Sir Dylan, Sir Nolan, Zachary Simmonds, Simon on the Moon, Sevn Thomas</b> <br>
+                        Release Date <b> April 7, 2023</b>
+                    </p>
+                </p>
+            </div>
+                <main>
+                <div class= "right">
+                    <div class= "title">
+                        <h1 style="font-family: 'AllotropeWide', 'sans-serif';"> Always </h1>  
+                    </div>
+                    <audio src="Daniel Caesar - Always (Official Audio).mp3" controls loop></audio>
+                    <div class= "Lyrics">   
+                        <p style="font-family: 'Poppins', sans-serif;">
+                            Baby, baby, there will always be<br>
+A space for you and me, right where you left it<br>
+And just maybe, enough time will pass<br>
+We'll look back and laugh, just don't forget it<br>
+<br>
+And maybe I'm wrong for writing this song<br>
+Losing my head over you<br>
+<br>
+And I'll be here, 'cause we both know how it goes<br>
+I don't want things to change, I pray they stay the same always<br>
+And I don't care if you're with somebody else<br>
+I'll give you time and space, just know I'm not a phase<br>
+<br>
+I'm always, ways, ways<br>
+Always, ways, ways<br>
+I'm always, ways, ways<br>
+<br>
+Pretty lady, used to walk with me<br>
+Down Bloor street, oh, what a time<br>
+And I still remember the fussin', the fightin', the fuckin', the lyin'<br>
+It's all fine, you'll always be mine<br>
+And maybe I'm wrong (hey, babe, you could)<br>
+For writing this song (write me a song)<br>
+Losing my head over you<br>
+<br>
+And I'll be here, 'cause we both know how it goes<br>
+I don't want things to change, I pray they stay the same always<br>
+And I don't care if you're with somebody else<br>
+I'll give you time and space, just know I'm not a phase<br>
+<br>
+I'm always, ways, ways<br>
+Always, ways, ways<br>
+I'm always, ways, ways<br>
+<br>
+Always, you can count on it, sure as the stars in the sky<br>
+Always, you can count on it, sure as the sun will rise<br>
+Always, my love for you ain't goin' nowhere<br>
+Always, I will be here</p><br>
+
+                       
+
+                    </div>
+                        <footer>
+                            <p style="color: black;">© 2023 lyyyyy | Daniel Caesar | Combining Music, Lyrics, Sound, and Video</p>
+                        </footer>
+                    </div>
+                </main>
+            
+        </body>
+</html>   
